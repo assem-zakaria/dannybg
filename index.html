@@ -1,0 +1,270 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+
+<head>
+    <meta charset="utf-8">
+    <title>Danny's Animated Background</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="DATS Animation Section"/>
+</head>
+
+
+<body>
+
+        <!-- Begin Required CSS  -->
+            <style type="text/css">
+
+                html {
+                    -webkit-box-sizing: border-box;
+                    box-sizing: border-box;
+                    overflow-x: hidden;
+                    width: 100%;
+                }
+
+                body {
+                    margin: 0;
+                    padding: 0;
+                }
+
+                :root {
+                    --color-bg1: rgb(0 0 0);
+                    --color-bg2: rgb(2 33 148);
+                    --color1: 18, 113, 255;
+                    --color2: 221, 74, 255;
+                    --color3: 100, 220, 255;
+                    --color4: 21, 208, 103;
+                    --color5: 201, 21, 214;
+                    --color-interactive: 255, 255, 255;
+                    --circle-size: 100%;
+                    --blending: hard-light;
+                }
+
+                @keyframes moveInCircle {
+                    0% {
+                        transform: rotate(0deg);
+                    }
+                    50% {
+                        transform: rotate(180deg);
+                    }
+                    100% {
+                        transform: rotate(360deg);
+                    }
+                }
+
+                @keyframes moveVertical {
+                    0% {
+                        transform: translateY(-50%) scale(1.5);
+                    }
+                    50% {
+                        transform: translateY(50%) scale(1);
+                    }
+                    100% {
+                        transform: translateY(-50%) scale(1.5);
+                    }
+                }
+
+                @keyframes moveHorizontal {
+                    0% {
+                        transform: translateX(-40%);
+                    }
+                    50% {
+                        transform: translateX(40%);
+                    }
+                    100% {
+                        transform: translateX(-40%);
+                    }
+                }
+
+                .gradient-bg {
+                    width: 100vw;
+                    height: 100vh;
+                    position: relative;
+                    overflow: hidden;
+                    background: linear-gradient(180deg, rgb(0 0 0), rgb(0 22 104));
+                    top: 0;
+                    left: 0;
+                }
+
+                svg {
+                    position: fixed;
+                    top:0;
+                    left:0;
+                    width: 0;
+                    height: 0;
+                }
+
+
+                .gradients-container {
+                    filter: url(#goo) blur(40px) ;
+                    width: 100%;
+                    height: 100%;
+                }
+
+                .g1 {
+                    position: absolute;
+                    background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
+                    mix-blend-mode: var(--blending);
+                    width: var(--circle-size);
+                    height: var(--circle-size);
+                    top: calc(50% - var(--circle-size) / 2);
+                    left: calc(50% - var(--circle-size) / 2);
+                    transform-origin: center center;
+                    animation: moveVertical 30s ease infinite;
+                    opacity: 1;
+                }
+
+                .g2 {
+                    position: absolute;
+                    background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
+                    mix-blend-mode: var(--blending);
+                    width: var(--circle-size);
+                    height: var(--circle-size);
+                    top: calc(50% - var(--circle-size) / 2);
+                    left: calc(50% - var(--circle-size) / 2);
+                    transform-origin: calc(50% - 400px);
+                    animation: moveInCircle 20s reverse infinite;
+                    opacity: 1;
+                }
+
+                .g3 {
+                    position: absolute;
+                    background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
+                    mix-blend-mode: var(--blending);
+                    width: var(--circle-size);
+                    height: var(--circle-size);
+                    top: calc(50% - var(--circle-size) / 2 + 200px);
+                    left: calc(50% - var(--circle-size) / 2 - 500px);
+                    transform-origin: calc(50% + 400px);
+                    animation: moveInCircle 40s linear infinite;
+                    opacity: 1;
+                }
+
+                .g4 {
+                    position: absolute;
+                    background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
+                    mix-blend-mode: var(--blending);
+                    width: var(--circle-size);
+                    height: var(--circle-size);
+                    top: calc(50% - var(--circle-size) / 2);
+                    left: calc(50% - var(--circle-size) / 2);
+                    transform-origin: calc(50% - 200px);
+                    animation: moveHorizontal 40s ease infinite;
+                    opacity: 0.7;
+                }
+
+                .g5 {
+                    position: absolute;
+                    background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
+                    mix-blend-mode: var(--blending);
+                    width: calc(var(--circle-size) * 2);
+                    height: calc(var(--circle-size) * 2);
+                    top: calc(50% - var(--circle-size));
+                    left: calc(50% - var(--circle-size));
+                    transform-origin: calc(50% - 800px) calc(50% + 200px);
+                    animation: moveInCircle 20s ease infinite;
+                    opacity: 1;
+                }
+
+                .g6 {
+                    position: absolute;
+                    background: radial-gradient(circle at center, rgb(1 85 255 / 67%) 0, rgba(var(--color5), 0) 50%) no-repeat;
+                    mix-blend-mode: var(--blending);
+                    width: calc(var(--circle-size)* 2);
+                    height: calc(var(--circle-size)* 2);
+                    top: calc(50% - var(--circle-size));
+                    left: calc(50% - var(--circle-size));
+                    transform-origin: calc(50% - 800px) calc(50% + 200px);
+                    animation: moveHorizontal 20s ease infinite;
+                    opacity: 1;
+                }
+
+                .interactive {
+                    position: absolute;
+                    background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
+                    mix-blend-mode: var(--blending);
+                    width: 80%;
+                    height: 80%;
+                    top: -50%;
+                    left: -50%;
+                    opacity: 0.7;
+                }
+
+
+                @media only screen and (max-width : 991px) {
+
+
+                }
+
+            </style>
+        <!-- End Required CSS  -->
+
+        <div class="gradient-bg">
+
+            <svg xmlns="http://www.w3.org/2000/svg">
+              <defs>
+                <filter id="goo">
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+                  <feBlend in="SourceGraphic" in2="goo" />
+                </filter>
+              </defs>
+            </svg>
+
+            <div class="gradients-container">
+              <div class="g1"></div>
+              <div class="g2"></div>
+              <div class="g3"></div>
+              <div class="g4"></div>
+              <div class="g5"></div>
+              <div class="g6"></div>
+              <div class="interactive"></div>
+            </div>
+
+          </div>
+
+
+
+
+
+    <!-- Begin JavaScript Libraries Files -->
+        <!-- <script src="js/gsap.min.js"></script> -->
+        <!-- <script src="js/ScrollTrigger.min.js"></script> -->
+    <!-- End JavaScript Libraries Files -->
+
+    <!-- Begin Animation JavaScript Code -->
+        <script type="text/javascript">
+            
+            (function () {
+
+                const interBubble = document.querySelector('.interactive');
+                if (!interBubble) return; // Prevent errors if the element is not found
+
+                let curX = 0;
+                let curY = 0;
+                let tgX = 0;
+                let tgY = 0;
+
+                function move() {
+                    curX += (tgX - curX) / 20;
+                    curY += (tgY - curY) / 20;
+                    interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
+                    requestAnimationFrame(move);
+                }
+
+                window.addEventListener('mousemove', (event) => {
+                    console.log("mousemove")
+                    tgX = event.clientX;
+                    tgY = event.clientY;
+                });
+
+                move();
+
+
+            })();
+        </script>
+    <!-- End Animation JavaScript Code -->
+
+</body>
+
+
+</html>
