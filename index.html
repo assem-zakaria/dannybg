@@ -95,151 +95,80 @@
 
 
                 .gradients-container {
-                    filter: url(#goo) blur(40px) ;
+                    filter: url(#goo) blur(40px) saturate(1.1) brightness(1.5);
                     width: 100%;
                     height: 100%;
-                }
-
-                .g1 {
-                    position: absolute;
-                    background: radial-gradient(circle at center, rgba(var(--color1), 0.8) 0, rgba(var(--color1), 0) 50%) no-repeat;
-                    mix-blend-mode: var(--blending);
-                    width: var(--circle-size);
-                    height: var(--circle-size);
-                    top: calc(50% - var(--circle-size) / 2);
-                    left: calc(50% - var(--circle-size) / 2);
-                    transform-origin: center center;
-                    animation: moveVertical 30s ease infinite;
-                    opacity: 1;
-                }
-
-                .g2 {
-                    position: absolute;
-                    background: radial-gradient(circle at center, rgba(var(--color2), 0.8) 0, rgba(var(--color2), 0) 50%) no-repeat;
-                    mix-blend-mode: var(--blending);
-                    width: var(--circle-size);
-                    height: var(--circle-size);
-                    top: calc(50% - var(--circle-size) / 2);
-                    left: calc(50% - var(--circle-size) / 2);
-                    transform-origin: calc(50% - 400px);
-                    animation: moveInCircle 20s reverse infinite;
-                    opacity: 1;
-                }
-
-                .g3 {
-                    position: absolute;
-                    background: radial-gradient(circle at center, rgba(var(--color3), 0.8) 0, rgba(var(--color3), 0) 50%) no-repeat;
-                    mix-blend-mode: var(--blending);
-                    width: var(--circle-size);
-                    height: var(--circle-size);
-                    top: calc(50% - var(--circle-size) / 2 + 200px);
-                    left: calc(50% - var(--circle-size) / 2 - 500px);
-                    transform-origin: calc(50% + 400px);
-                    animation: moveInCircle 40s linear infinite;
-                    opacity: 1;
-                }
-
-                .g4 {
-                    position: absolute;
-                    background: radial-gradient(circle at center, rgba(var(--color4), 0.8) 0, rgba(var(--color4), 0) 50%) no-repeat;
-                    mix-blend-mode: var(--blending);
-                    width: var(--circle-size);
-                    height: var(--circle-size);
-                    top: calc(50% - var(--circle-size) / 2);
-                    left: calc(50% - var(--circle-size) / 2);
-                    transform-origin: calc(50% - 200px);
-                    animation: moveHorizontal 40s ease infinite;
-                    opacity: 0.7;
-                }
-
-                .g5 {
-                    position: absolute;
-                    background: radial-gradient(circle at center, rgba(var(--color5), 0.8) 0, rgba(var(--color5), 0) 50%) no-repeat;
-                    mix-blend-mode: var(--blending);
-                    width: calc(var(--circle-size) * 2);
-                    height: calc(var(--circle-size) * 2);
-                    top: calc(50% - var(--circle-size));
-                    left: calc(50% - var(--circle-size));
-                    transform-origin: calc(50% - 800px) calc(50% + 200px);
-                    animation: moveInCircle 20s ease infinite;
-                    opacity: 1;
-                }
-
-                .g6 {
-                    position: absolute;
-                    background: radial-gradient(circle at center, rgb(1 85 255 / 67%) 0, rgba(var(--color5), 0) 50%) no-repeat;
-                    mix-blend-mode: var(--blending);
-                    width: calc(var(--circle-size)* 2);
-                    height: calc(var(--circle-size)* 2);
-                    top: calc(50% - var(--circle-size));
-                    left: calc(50% - var(--circle-size));
-                    transform-origin: calc(50% - 800px) calc(50% + 200px);
-                    animation: moveHorizontal 20s ease infinite;
-                    opacity: 1;
-                }
-
-                .interactive {
-                    position: absolute;
-                    background: radial-gradient(circle at center, rgba(var(--color-interactive), 0.8) 0, rgba(var(--color-interactive), 0) 50%) no-repeat;
-                    mix-blend-mode: var(--blending);
-                    width: 80%;
-                    height: 80%;
-                    top: -50%;
-                    left: -50%;
-/*                     opacity: 0.7; */
-                    opacity: 0;
                 }
 
                 .gradients-container svg {
                     position: absolute;
                     left: 0;
                     bottom: 0;
-                    width: 100%;
-                    transform: scaleY(1) translateY(30%);
+                    width: 130%;
+                    height: 40vh;
+                    transform: scaleY(1) translateY(30%) translateX(-20%);
                     transform-origin: bottom;
                 }
 
-                @keyframes svgOne {
+                @keyframes svgLow {
                     0% {
-                        transform: scaleY(1) translateY(30%);
+                        transform: scaleY(1) translateY(30%) translateX(-20%);
                     }
                     50% {
-                        transform: scaleY(1.2) translateY(30%);
+                        transform: scaleY(1.2) translateY(30%) translateX(-20%);
                     }
                     100% {
-                        transform: scaleY(1) translateY(30%);
+                        transform: scaleY(1) translateY(30%) translateX(-20%);
+                    }
+                }
+
+                @keyframes svgHigh {
+                    0% {
+                        transform: scaleY(1) translateY(30%) translateX(-20%);
+                    }
+                    50% {
+                        transform: scaleY(1.4) translateY(30%) translateX(-20%);
+                    }
+                    100% {
+                        transform: scaleY(1) translateY(30%) translateX(-20%);
+                    }
+                }
+
+                @keyframes svgHigh2 {
+                    0% {
+                        transform: scaleY(1) translateY(30%) translateX(-20%);
+                    }
+                    50% {
+                        transform: scaleY(1.8) translateY(30%) translateX(-20%);
+                    }
+                    100% {
+                        transform: scaleY(1) translateY(30%) translateX(-20%);
                     }
                 }
 
                 .gradients-container svg:nth-of-type(1) {
-                    animation: svgOne 5s ease-in-out infinite;
+                    animation: svgLow 5s ease-in-out infinite;
                 }
 
                 .gradients-container svg:nth-of-type(2) {
-                    animation: svgOne 5s ease-in-out infinite;
+                    animation: svgHigh 5s ease-in-out infinite;
                     animation-delay: 1s;
                 }
 
                 .gradients-container svg:nth-of-type(3) {
-                    animation: svgOne 5s ease-in-out infinite;
+                    animation: svgLow 5s ease-in-out infinite;
                     animation-delay: 2s;
                 }
 
                 .gradients-container svg:nth-of-type(4) {
-                    animation: svgOne 5s ease-in-out infinite;
+                    animation: svgLow 5s ease-in-out infinite;
                     animation-delay: 3s;
                 }
 
                 .gradients-container svg:nth-of-type(5) {
-                    animation: svgOne 5s ease-in-out infinite;
+                    animation: svgHigh2 5s ease-in-out infinite;
                     animation-delay: 4s;
                 }
-
-                .gradients-container svg:nth-of-type(6) {
-                    animation: svgOne 5s ease-in-out infinite;
-                    animation-delay: 5s;
-                }
-
 
                 @media only screen and (max-width : 991px) {
 
@@ -254,8 +183,8 @@
             <svg xmlns="http://www.w3.org/2000/svg" id="filter-svg">
               <defs>
                 <filter id="goo">
-                  <feGaussianBlur in="SourceGraphic" stdDeviation="1000" result="blur" />
-                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -8" result="goo" />
+                  <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"/>
+                  <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 30 -8" result="goo" />
                   <feBlend in="SourceGraphic" in2="goo" />
                 </filter>
               </defs>
@@ -270,17 +199,17 @@
                 <div class="g6"></div> -->
                 <div class="interactive"></div>
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#15d067cc" fill-opacity="1" d="M0,192L48,170.7C96,149,192,107,288,80C384,53,480,43,576,53.3C672,64,768,96,864,117.3C960,139,1056,149,1152,144C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMid slice"><path fill="#15d067cc" fill-opacity="1" d="M0,192L48,170.7C96,149,192,107,288,80C384,53,480,43,576,53.3C672,64,768,96,864,117.3C960,139,1056,149,1152,144C1248,139,1344,117,1392,106.7L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
                 </svg>
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#dd4affcc" fill-opacity="1" d="M0,96L48,96C96,96,192,96,288,112C384,128,480,160,576,149.3C672,139,768,85,864,74.7C960,64,1056,96,1152,96C1248,96,1344,64,1392,48L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMid slice"><path fill="#dd4affcc" fill-opacity="1" d="M0,96L48,96C96,96,192,96,288,112C384,128,480,160,576,149.3C672,139,768,85,864,74.7C960,64,1056,96,1152,96C1248,96,1344,64,1392,48L1440,32L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#64dcffcc" fill-opacity="1" d="M0,224L21.8,208C43.6,192,87,160,131,176C174.5,192,218,256,262,277.3C305.5,299,349,277,393,240C436.4,203,480,149,524,133.3C567.3,117,611,139,655,170.7C698.2,203,742,245,785,245.3C829.1,245,873,203,916,176C960,149,1004,139,1047,117.3C1090.9,96,1135,64,1178,64C1221.8,64,1265,96,1309,133.3C1352.7,171,1396,213,1418,234.7L1440,256L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMid slice"><path fill="#64dcffcc" fill-opacity="1" d="M0,224L21.8,208C43.6,192,87,160,131,176C174.5,192,218,256,262,277.3C305.5,299,349,277,393,240C436.4,203,480,149,524,133.3C567.3,117,611,139,655,170.7C698.2,203,742,245,785,245.3C829.1,245,873,203,916,176C960,149,1004,139,1047,117.3C1090.9,96,1135,64,1178,64C1221.8,64,1265,96,1309,133.3C1352.7,171,1396,213,1418,234.7L1440,256L1440,320L1418.2,320C1396.4,320,1353,320,1309,320C1265.5,320,1222,320,1178,320C1134.5,320,1091,320,1047,320C1003.6,320,960,320,916,320C872.7,320,829,320,785,320C741.8,320,698,320,655,320C610.9,320,567,320,524,320C480,320,436,320,393,320C349.1,320,305,320,262,320C218.2,320,175,320,131,320C87.3,320,44,320,22,320L0,320Z"></path></svg>
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#0155ffab" fill-opacity="1" d="M0,224L10.9,229.3C21.8,235,44,245,65,234.7C87.3,224,109,192,131,181.3C152.7,171,175,181,196,192C218.2,203,240,213,262,192C283.6,171,305,117,327,90.7C349.1,64,371,64,393,64C414.5,64,436,64,458,96C480,128,502,192,524,186.7C545.5,181,567,107,589,112C610.9,117,633,203,655,213.3C676.4,224,698,160,720,154.7C741.8,149,764,203,785,197.3C807.3,192,829,128,851,101.3C872.7,75,895,85,916,128C938.2,171,960,245,982,240C1003.6,235,1025,149,1047,117.3C1069.1,85,1091,107,1113,122.7C1134.5,139,1156,149,1178,160C1200,171,1222,181,1244,165.3C1265.5,149,1287,107,1309,80C1330.9,53,1353,43,1375,37.3C1396.4,32,1418,32,1429,32L1440,32L1440,320L1429.1,320C1418.2,320,1396,320,1375,320C1352.7,320,1331,320,1309,320C1287.3,320,1265,320,1244,320C1221.8,320,1200,320,1178,320C1156.4,320,1135,320,1113,320C1090.9,320,1069,320,1047,320C1025.5,320,1004,320,982,320C960,320,938,320,916,320C894.5,320,873,320,851,320C829.1,320,807,320,785,320C763.6,320,742,320,720,320C698.2,320,676,320,655,320C632.7,320,611,320,589,320C567.3,320,545,320,524,320C501.8,320,480,320,458,320C436.4,320,415,320,393,320C370.9,320,349,320,327,320C305.5,320,284,320,262,320C240,320,218,320,196,320C174.5,320,153,320,131,320C109.1,320,87,320,65,320C43.6,320,22,320,11,320L0,320Z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMid slice"><path fill="#0155ffab" fill-opacity="1" d="M0,224L10.9,229.3C21.8,235,44,245,65,234.7C87.3,224,109,192,131,181.3C152.7,171,175,181,196,192C218.2,203,240,213,262,192C283.6,171,305,117,327,90.7C349.1,64,371,64,393,64C414.5,64,436,64,458,96C480,128,502,192,524,186.7C545.5,181,567,107,589,112C610.9,117,633,203,655,213.3C676.4,224,698,160,720,154.7C741.8,149,764,203,785,197.3C807.3,192,829,128,851,101.3C872.7,75,895,85,916,128C938.2,171,960,245,982,240C1003.6,235,1025,149,1047,117.3C1069.1,85,1091,107,1113,122.7C1134.5,139,1156,149,1178,160C1200,171,1222,181,1244,165.3C1265.5,149,1287,107,1309,80C1330.9,53,1353,43,1375,37.3C1396.4,32,1418,32,1429,32L1440,32L1440,320L1429.1,320C1418.2,320,1396,320,1375,320C1352.7,320,1331,320,1309,320C1287.3,320,1265,320,1244,320C1221.8,320,1200,320,1178,320C1156.4,320,1135,320,1113,320C1090.9,320,1069,320,1047,320C1025.5,320,1004,320,982,320C960,320,938,320,916,320C894.5,320,873,320,851,320C829.1,320,807,320,785,320C763.6,320,742,320,720,320C698.2,320,676,320,655,320C632.7,320,611,320,589,320C567.3,320,545,320,524,320C501.8,320,480,320,458,320C436.4,320,415,320,393,320C370.9,320,349,320,327,320C305.5,320,284,320,262,320C240,320,218,320,196,320C174.5,320,153,320,131,320C109.1,320,87,320,65,320C43.6,320,22,320,11,320L0,320Z"></path></svg>
 
 
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="#15d067cc" fill-opacity="1" d="M0,32L34.3,74.7C68.6,117,137,203,206,224C274.3,245,343,203,411,176C480,149,549,139,617,154.7C685.7,171,754,213,823,240C891.4,267,960,277,1029,272C1097.1,267,1166,245,1234,229.3C1302.9,213,1371,203,1406,197.3L1440,192L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="xMidYMid slice"><path fill="#15d067cc" fill-opacity="1" d="M0,32L34.3,74.7C68.6,117,137,203,206,224C274.3,245,343,203,411,176C480,149,549,139,617,154.7C685.7,171,754,213,823,240C891.4,267,960,277,1029,272C1097.1,267,1166,245,1234,229.3C1302.9,213,1371,203,1406,197.3L1440,192L1440,320L1405.7,320C1371.4,320,1303,320,1234,320C1165.7,320,1097,320,1029,320C960,320,891,320,823,320C754.3,320,686,320,617,320C548.6,320,480,320,411,320C342.9,320,274,320,206,320C137.1,320,69,320,34,320L0,320Z"></path></svg>
 
 
 
@@ -301,29 +230,6 @@
         <script type="text/javascript">
             
             (function () {
-
-                const interBubble = document.querySelector('.interactive');
-                if (!interBubble) return; // Prevent errors if the element is not found
-
-                let curX = 0;
-                let curY = 0;
-                let tgX = 0;
-                let tgY = 0;
-
-                function move() {
-                    curX += (tgX - curX) / 20;
-                    curY += (tgY - curY) / 20;
-                    interBubble.style.transform = `translate(${Math.round(curX)}px, ${Math.round(curY)}px)`;
-                    requestAnimationFrame(move);
-                }
-
-                window.addEventListener('mousemove', (event) => {
-                    console.log("mousemove")
-                    tgX = event.clientX;
-                    tgY = event.clientY;
-                });
-
-                move();
 
 
             })();
